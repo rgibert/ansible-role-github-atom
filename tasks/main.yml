@@ -1,0 +1,19 @@
+---
+- block:
+
+    - name: setup apt repository
+      apt_repository:
+        repo: "deb http://ppa.launchpad.net/webupd8team/atom/ubuntu {{ ansible_distribution_release }} main"
+        filename: github-atom
+      when:
+        - ansible_distribution == "Ubuntu"
+
+    - name: install github atom
+      package:
+        name: "atom"
+        state: present
+
+  become: yes
+  become_user: root
+  tags:
+    - github-atom
