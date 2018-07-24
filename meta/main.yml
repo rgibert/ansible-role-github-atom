@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: github_atom
   author: Richard Gibert
   description: GitHub Atom
   license: GPLv3
